@@ -1,0 +1,17 @@
+<h2>New task</h2>
+
+<%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: 'New task' %>
+
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+
+  <%= f.submit %>
+<% end %>
+
+<% unless f.object.new_record? %>
+  <label>
+    <%= f.check_box :completed %> Completed
+  </label>
+<% end %>
